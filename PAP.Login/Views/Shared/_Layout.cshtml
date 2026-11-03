@@ -30,9 +30,13 @@
                         <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "nav-link" })</li>
                         <li>@Html.ActionLink("Contact", "Contact", "Home", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Books", "Index", "Library", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Cards", "Catalog", "Library", new { vista = "cards" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Crear", "Create", "Library", new { area = "" }, new { @class = "nav-link" })</li>
+                        <li>@Html.ActionLink("Binder", "PrecioDemo", "Library", new { area = "" }, new { @class = "nav-link" })</li>
                     }
                 </ul>
-                 @Html.Partial("_LoginPartial")
+                @Html.Partial("_LoginPartial")
             </div>
         </div>
     </nav>
