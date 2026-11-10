@@ -6,11 +6,14 @@ using System.Web.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
+using PAP.Login.Filters;
 using PAP.Login.Models;
 
 namespace PAP.Login.Controllers
 {
     [Authorize]
+    [LogFilter]
+    [LogResultFilter]
     public class ManageController : Controller
     {
         private ApplicationSignInManager _signInManager;

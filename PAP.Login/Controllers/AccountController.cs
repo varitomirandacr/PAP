@@ -1,18 +1,18 @@
-﻿using System;
-using System.Globalization;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.Owin;
+using Microsoft.Owin.Security;
+using PAP.Login.Filters;
+using PAP.Login.Models;
 using System.Linq;
-using System.Security.Claims;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
-using Microsoft.AspNet.Identity;
-using Microsoft.AspNet.Identity.Owin;
-using Microsoft.Owin.Security;
-using PAP.Login.Models;
 
 namespace PAP.Login.Controllers
 {
     [Authorize]
+    [LogFilter]
+    [LogResultFilter]
     public class AccountController : Controller
     {
         private ApplicationSignInManager _signInManager;
@@ -23,7 +23,7 @@ namespace PAP.Login.Controllers
         }
 
         public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
+        { 
             UserManager = userManager;
             SignInManager = signInManager;
         }

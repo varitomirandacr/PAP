@@ -1,5 +1,6 @@
 ﻿using PAP.Business;
 using PAP.DataAccess;
+using PAP.Login.Filters;
 using PAP.Login.ModelBinders;
 using System;
 using System.Linq;
@@ -10,6 +11,8 @@ namespace PAP.Login.Controllers
     // Ejemplo: Routing de atributos
     // Prefijo común para las acciones de este controlador: /biblioteca/...
     [RoutePrefix("biblioteca")]
+    [LogFilter]
+    [LogResultFilter]
     public class LibraryController : Controller
     {
         private readonly BookManager _bookManager;
